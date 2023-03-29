@@ -1,0 +1,498 @@
+﻿<style>
+    .nav-bar {
+        -webkit-box-align: center !important;
+        background: white !important;
+        display: flex !important;
+        align-items: center !important;
+        height: 40px !important;
+        padding-right: 16px !important;
+        position: relative !important;
+        z-index: 1 !important;
+        border-bottom: 1px solid rgb(235, 235, 235) !important;
+    }
+    
+    .nav-back {
+        margin-right: auto !important;
+        overflow: hidden !important;
+    }
+
+    .back {
+        -webkit-box-align: center !important;
+        flex: 1 1 0% !important;
+        display: flex !important;
+        align-items: center !important;
+        height: 48px !important;
+        padding: 0px 8px !important;
+        background-color: transparent !important;
+        border: none !important;
+        /*color: rgb(34, 34, 34) !important;*/
+        color: var(--main-bg-color) !important;
+        max-width: 100% !important;
+        text-decoration: none;
+    }
+
+    .nav-back-label {
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        color: var(--main-bg-color) !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+    }
+
+    @media (max-width: 767px) {
+        .leaflet-sidebar .close {
+            /*top: 12px;*/
+        }
+    }
+
+</style>
+
+<!--<div class="header">
+    <div class="nav-bar">
+        <div class="nav-back">
+            <a id="back" onclick="handleBack(event)" class="back">
+                <div>
+                    <svg viewBox="0 0 32 32" focusable="false"
+                         style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;">
+                        <g fill="none">
+                            <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="nav-back-label">
+                    <div>Retour</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>-->
+<div class="headerA">
+    <div class="headerbar">
+        <div class="barback">
+            <button id="backbtn" class="barbackbtn" onclick="handleBack()">
+                <div class="backcontent">
+                    <svg viewBox="0 0 32 32" focusable="false"
+                         style="display: block; fill: none; height: 16px; width: 16px;
+                          stroke: currentcolor; stroke-width: 4; overflow: visible;">
+                        <g fill="none">
+                            <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<form id="oeuvre-form" method="POST" enctype="multipart/form-data">
+    <div class="box-scrollable">
+        <input type="hidden" id="idOeuvre" name="idOeuvre" />
+        <div class="pic-header">
+            <div id="output" class="pic" onclick="onImageClick()">
+                <div id="photoIcon" class="pic-icon"></div>
+            </div>
+            <input type="file" accept="image/*" id="file" name="file" onchange="loadFile(event)" style="display:none">
+        </div>
+
+        <div>
+            <div class="box-container">
+                <div class="box-line-2">
+                    <div>
+                        <div class="label accent-color">
+                            Artiste(s)
+                        </div>
+                        <input type="text" id="artist" name="artist" style="width:100%" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-container">
+                <div class="box-line-2">
+                    <div>
+                        <div class="label accent-color">
+                            Type
+                        </div>
+                        <select id="typeOeuvre" name="typeOeuvre" style="width:100%">
+                            <option value="Graffiti">Graffiti</option>
+                            <option value="Collage">Collage</option>
+                            <option value="Fresque">Fresque</option>
+                            <option value="Pochoir">Pochoir</option>
+                            <option value="Mosaique">Mosaique</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="box-container">
+                <div>
+                    <div class="box-line-2">
+                        <div>
+                            <div class="label accent-color">
+                                Rue
+                            </div>
+                            <input type="text" id="rue" name="rue" style="width:100%" />
+                        </div>
+                    </div>
+
+                    <div class="box-line-2">
+                        <div>
+                            <div class="label accent-color">
+                                Ville
+                            </div>
+                            <input type="text" id="ville" name="ville" disabled="disabled" style="width:100%" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-container">
+                <div>
+                    <div class="box-line-2">
+                        <div>
+                            <div class="label accent-black">
+                                Publiée par
+                                <span class="publisher-name accent-color"></span>
+                            </div>
+                            <span class="date-creation accent-black"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-container information-complementaire">
+                <div class="box-line-2">
+                    <div>
+                        <div class="label accent-black">Informations complémentaires</div>
+                        <div class="information accent-black">
+                            <textarea rows="5" cols="45" id="information" name="information" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</form>
+<footer class="footer">
+    <button class="submit-button" type="button" id="enregistrer">
+        <span>
+            Enregistrer
+        </span>
+    </button>
+
+    <span id="msgConfirmation" class="accent-color" style="padding-bottom:10px;"></span>
+    <div style="display:flex">
+        <button class="submit-button" type="button" id="btnSave">
+            <span>
+                Oui
+            </span>
+        </button>
+        <button class="cancel-button" type="button" id="btnCancel">
+            <span>
+                Non
+            </span>
+        </button>
+    </div>
+    <div id="busy-save" class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</footer>
+
+<script>
+
+    const addresssGeocodeServiceUrlTemplate = 'https://atlas.microsoft.com/search/address/json?subscription-key={subscription-key}&typeahead=true&api-version=1&query={query}&language={language}&countrySet={countrySet}&view=Auto';
+    let _currentAdressePosition;
+    let _currentAdresse;
+   
+    function loadFile(event) {
+        var image = document.getElementById('output');
+        image.style.backgroundImage = "url('" + URL.createObjectURL(event.target.files[0]) + "')";
+    };
+
+    function onImageClick() {
+        $("#file").click();
+    }
+
+    
+    
+
+    function loadFormOeuvre(feature, e) {
+
+        _newOeuvre = false;
+        _currentAdressePosition =
+            JSON.stringify({
+                'lat': e.latlng.lat,
+                'lon': e.latlng.lng
+            });
+
+        var data = feature.properties;
+
+        console.log('oeuvre', data, e);
+
+        $("#btnSave").css('display', 'none');
+        $("#btnCancel").css('display', 'none');
+        $("#busy-save").css('display', 'none');
+
+        $("#idOeuvre").attr('value', data.id);
+
+        //Chargement de l'image
+        document.getElementById("output").style.backgroundImage = "url('" + data.url + "')";
+
+        //Artiste
+        if (data.artiste) {
+            $("#artist").attr('value', data.artiste);
+        }
+        else {
+            $("#artist").attr('value', 'Non renseigné(s)');
+        }
+
+        //Type d'oeuvre
+        let textToFind = data.typeOeuvre;
+        let dd = document.getElementById('typeOeuvre');
+        dd.selectedIndex = [...dd.options].findIndex(option => option.text === textToFind);
+
+        //Adresse
+        if (data.rue && data.ville) {
+            $("#rue").attr('value',  data.rue);
+            $("#ville").attr('value', data.ville);
+        }
+        else {
+            var geocodeService = L.esri.Geocoding.geocodeService();
+            geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
+                if (!error && result) {
+                    $("#ville").attr('value', result.address.City);
+                    $("#rue").attr('value', result.address.Address);
+                }
+            });
+        }
+
+        
+
+        //Pseudo
+        if (data.utlisisateurPseudo) {
+            $(".publisher-name").html(data.utlisisateurPseudo);
+        }
+        else {
+            $(".publisher-name").html('Inconnu');
+        }
+
+        //Date de publication
+        var date = data.date;
+        if (date) {
+            $(".date-creation").html('le ' + date);
+        }
+
+        //Informations complémentaires
+        $(".information-complementaire").css('visibility', 'visible');
+        if (data.informations) {
+            $("#information").val(data.informations);
+        }
+        else {
+            $("#information").val('Aucune information à ce jour');
+        }
+
+
+        $("#enregistrer").click(function () {
+            $("#msgConfirmation").css('display', 'inline-block');
+            $("#msgConfirmation").html('Voulez-vous enregistrer vos modifications ?');
+            $("#btnSave").css('display', 'inline-block');
+            $("#btnCancel").css('display', 'inline-block');
+            $("#enregistrer").css('display', 'none');
+        });
+
+        $("#btnSave").click(function () {
+            save();
+        });
+
+        $("#btnCancel").click(function () {
+            $("#btnSave").css('display', 'none');
+            $("#btnCancel").css('display', 'none');
+            $("#enregistrer").css('display', 'inline-block');
+            $("#msgConfirmation").css('display', 'none');
+        });
+    }
+
+    function loadFormNewOeuvre() {
+
+        _newOeuvre = true;
+
+        $("#btnSave").css('display', 'none');
+        $("#btnCancel").css('display', 'none');
+        $("#busy-save").css('display', 'none');
+
+        //Chargement de l'image
+        document.getElementById("output").style.backgroundImage = "url('./ajouter-photo.png')";
+        document.getElementById("output").style.backgroundPosition = "center";
+        document.getElementById("output").style.backgroundSize = "contain";
+        document.getElementById("output").style.backgroundRepeat = "no-repeat";
+        $("#photoIcon").css('display', 'none');
+
+        //Artiste
+        $("#artist").attr('value', 'A définir');
+
+        var geocodeService = L.esri.Geocoding.geocodeService();
+        geocodeService.reverse().latlng(_currentLocation.latlng).run(function (error, result) {
+            if (!error && result) {
+                console.log('position', result)
+                $("#ville").attr('value', result.address.City);
+                $("#rue").attr('value', result.address.Address);
+                _currentAdressePosition = JSON.stringify({
+                    'lat': result.latlng.lat,
+                    'lon': result.latlng.lng
+                });
+                _currentAdresse = JSON.stringify(result.Match_addr);
+            }
+        });
+
+
+        //Pseudo
+        if (_userIsLogin) {
+            $(".publisher-name").html(_userName);
+        }
+
+        //Informations complémentaires
+        $(".information-complementaire").css('visibility', 'visible');
+        $("#information").attr('value', 'A définir');
+
+        $("#enregistrer").html('Créer');
+        $("#enregistrer").click(function () {
+
+            $("#msgConfirmation").css('display', 'inline-block');
+            $("#msgConfirmation").html('Voulez-vous envoyer votre demande de création ?');
+            $("#btnSave").css('display', 'inline-block');
+            $("#btnCancel").css('display', 'inline-block');
+            $("#enregistrer").css('display', 'none');
+        });
+
+        $("#btnSave").click(function (e) {
+            //Vérification des données obligations de saisir une adresse et une photo
+            if (!$('#file').val()) {
+                e.preventDefault();
+                alert('Veuillez ajouter une photo :)');
+            }
+            else {
+                $("#btnSave").css('display', 'none');
+                $("#btnCancel").css('display', 'none');
+                $("#msgConfirmation").html('Traitement en cours ...');
+                $("#busy-save").css('display', 'inline-block');
+                save();
+            }
+        });
+
+        $("#btnCancel").click(function () {
+            handleBack();
+        });
+    }
+
+    function addSearchAddress() {
+        $("#rue").autocomplete({
+            appendTo: "#sidebar",
+            minLength: 3,   //Don't ask for suggestions until atleast 3 characters have been typed. This will reduce costs by not making requests that will likely not have much relevance.
+            delay: 700,
+            source: function (request, response) {
+
+                //Create a URL to the Azure Maps search service to perform the address search.
+                var requestUrl = addresssGeocodeServiceUrlTemplate.replace('{query}', encodeURIComponent(request.term))
+                    .replace('{subscription-key}', 'VdMYbbyNpmHp66kZU2Fh0F49wyasCau1UfrttezsszM')
+                    .replace('{language}', 'fr-FR')
+                    .replace('{countrySet}', 'FR'); //A comma seperated string of country codes to limit the suggestions to.
+
+                //Proces the request.
+                fetch(requestUrl, {
+                    method: 'GET',
+                    mode: 'cors',
+                    headers: {
+                        //'x-ms-client-id': clientId,
+                        //'Authorization': 'Bearer ' + token,
+                        'Content-Type': 'application/json; charset=utf-8'
+                    }
+                }).then(r => r.json()).then(data => {
+                    response(data.results);
+                });
+            },
+            select: function (event, ui) {
+                event.preventDefault();
+
+                //When a suggestion has been selected.
+                var selection = ui.item;
+                $("#rue").autocomplete("destroy");
+
+                //Populate the address textbox values.
+                _currentAdresse = JSON.stringify(selection.address);
+                _currentAdressePosition = JSON.stringify(selection.position);
+                document.getElementById('rue').value = (selection.address.streetNumber
+                    ? (selection.address.streetNumber + ' ')
+                    : '')
+                    + (selection.address.streetName
+                        ? (selection.address.streetName + ' ')
+                        : '');
+                document.getElementById('ville').value = (selection.address.municipality || '');
+                
+                addSearchAddress();
+            }
+        }).autocomplete("instance")._renderItem = function (ul, item) {
+
+            //Format the displayed suggestion to show the formatted suggestion string.
+            var suggestionLabel = item.address.freeformAddress;
+            if (item.poi && item.poi.name) {
+                suggestionLabel = item.poi.name + ' (' + suggestionLabel + ')';
+            }
+
+            return $("<li>")
+                .append("<a>" + suggestionLabel + "</a>")
+                .appendTo(ul);
+        };
+    }
+
+    function save() {
+
+        var form = $("#oeuvre-form")[0];
+        const data = new FormData(form);
+        data.append('position', _currentAdressePosition);
+        data.append('userMail', _userEmail);
+        data.append('userPseudo', _userName);
+        data.append('isAdmin', _isAdmin)
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            //url: "http://localhost:7071/api/UpdateOeuvreInformationFunction",
+            url: "https://import-kmz.azurewebsites.net/api/UpdateOeuvreInformationFunction?code=25V0Lv9anKVgiB0nrURMKeSRz8Uo0YDMH0sK4jW/f8nID5g0xaCvdA==",
+            data: data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+
+                console.log("SUCCESS : ", data);
+                if (_sidebarFeature && _sidebarFeature.properties) {
+                    _sidebarFeature.properties = data;
+                    _sidebarFeature.properties.url = correctImageUrl(data.imageUrl);
+                }
+                
+                $("#msgConfirmation").css('display', 'none');
+                $("#busy-save").css('display', 'none');
+                searchByLayer();
+                handleBack();
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+                $("#busy-save").css('display', 'none');
+                $("#msgConfirmation").html('e');
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $(".close").css('display', 'none');
+        addSearchAddress();
+    });
+</script>

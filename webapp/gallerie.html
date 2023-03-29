@@ -1,0 +1,232 @@
+﻿<style>
+    /*.h_iframe{
+        width: 100%;
+        height: 500px;
+        overflow-y: scroll;
+    }*/
+
+    /*#detailFrame {
+        border: 0px #FFFFFF none;
+        width: 100%;
+        height:350px;
+    }*/
+
+    .lieu-name{
+        cursor: pointer;
+    }
+
+    .site-gallerie{
+        cursor: pointer;
+    }
+</style>
+
+<!--<div class="img-container">
+  <div class="circle-img-container">
+    <img class="circleimg feature-img" />
+  </div>
+</div>-->
+
+<div class="headerA">
+    <div class="headerbar">
+        <div class="barback">
+            <button id="backbtn" class="barbackbtn" onclick="handleBack()">
+                <div class="backcontent">
+                    <svg viewBox="0 0 32 32" focusable="false"
+                         style="display: block; fill: none; height: 16px; width: 16px;
+                          stroke: currentcolor; stroke-width: 4; overflow: visible;">
+                        <g fill="none">
+                            <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+
+            </button>
+
+        </div>
+        <!--<div class="barmenuitems">
+            <div class="sharemenu">
+                <button aria-label="Partager" type="button" class="btnmenu">
+                    <span class="sharebtncontent">
+                        <svg viewBox="0 0 32 32" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible;">
+                            <g fill="none">
+                                <path d="M27 18v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-9"></path>
+                                <path d="M16 3v23V3z"></path>
+                                <path d="M6 13l9.293-9.293a1 1 0 0 1 1.414 0L26 13"></path>
+                            </g>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+            <div>
+                <button type="button" class="btnmenu">
+                    <span class="btncontent">
+                        <svg viewBox="0 0 32 32" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible;">
+                            <path d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z">
+                            </path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>-->
+    </div>
+
+</div>
+
+<div class="pic-header">
+    <div id="feature-img" class="feature-img pic"></div>
+</div>
+
+<div>
+  <div class="box-container">
+    <div>
+      <div class="box-line-2">
+        <div>
+          <div class="label accent-black">
+            Lieu:
+            <a class="lieu-name accent-color"></a>
+          </div>
+        </div>
+        <div class="type-label">
+          <div class="label accent-color type"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div>
+  <div class="box-container">
+    <div>
+
+      <div class="box-line-2">
+        <div>
+          <div class="adresse-ville label accent-color"></div>
+          <div class="adresse-rue accent-color"></div>
+        </div>
+        <div class="module">
+          <div class="module-button" onclick="navigate()">
+            <img class="button-img" src="google-maps.png" />
+            <span class="span-navigate"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box-container">
+    <div class="box-line-2">
+      <div>
+        <div class="label accent-black">
+          <a class="site-gallerie accent-color"/>
+        </div>
+      </div>
+
+      <div>
+        <div class="right label accent-black">
+          Tél : 
+          <a class="tel-gallerie"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box-scrollable">
+      <div class="box-container information-complementaire">
+          <div class="box-line-2">
+              <div>
+                  <div class="label accent-black">Informations complémentaires</div>
+                  <div class="information accent-black"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script>
+
+    let waitDelete = false;
+    $(document).ready(function () {
+        $(".close").css('display', 'none');
+    });
+
+    function loadDetailPartenaire(feature, e) {
+        $(".feature-img").attr('src', 'images/nopicture.png');
+        $(".button-navigate").attr('href', '');
+        $(".adresse-rue").html('rue inconnue');
+        $(".adresse-ville").html('Ville inconnu');
+        $(".date-creation").html('Date de création non renseignée');
+        $(".type").html('Type inconnu');
+        $(".artist-name").html('Non renseigné(s)');
+        $(".publisher-name").html('Inconnu');
+        $(".information").html('Aucune information à ce jour');
+        $(".button-navigate").html("distance indéterminée");
+        $(".zoom-img").attr('href', '');
+
+        var data = feature.properties;
+        document.getElementById("feature-img").style.backgroundImage = "url('" + data.url + "')";
+
+        $(".button-navigate").attr('href', "https://www.google.com/maps/dir/?api=1&destination=" + e.latlng.lat + "," + e.latlng.lng + "&travelmode=walking&dir_action=navigate");
+
+        if (data.rue && data.ville) {
+            $(".adresse-rue").html(data.rue);
+            $(".adresse-ville").html(data.ville);
+        }
+        else {
+            var geocodeService = L.esri.Geocoding.geocodeService();
+            geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
+                if (!error && result) {
+                    $(".adresse-ville").html(result.address.City);
+                    $(".adresse-rue").html(result.address.Address);
+                }
+            });
+
+        }
+
+        $(".type").html(data.typePartenaire);
+
+        if (data.nom) {
+            $(".lieu-name").html(data.nom);
+            $(".lieu-name").click(function () {
+                if (data.goodbarber) {
+                    window.location.href = data.goodbarber;
+                }
+            });
+        }
+        else if (!data.nom || data.nom === '' || data.nom === null || data.nom === ' ') {
+            $(".lieu-name").html('Non renseigné(s)');
+        }
+
+
+        if (data.information === '' || data.information === null || data.information === ' ') {
+            $(".information").html('Aucune information à ce jour');
+            $(".information-complementaire").css('visibility', 'hidden');
+        }
+        else {
+            $(".information").html(data.information);
+            $(".information-complementaire").css('visibility', 'visible');
+        }
+
+
+        if (e && _markerPosition) {
+            $(".span-navigate").html(calcDistance(e) + " km");
+        }
+        else {
+            $(".span-navigate").html("Y aller");
+        }
+
+        $(".tel-gallerie").attr('href', 'tel: ' + data.telephone);
+        $(".tel-gallerie").html(data.telephone);
+
+        $(".site-gallerie").html('Site web');
+        $(".site-gallerie").click(function () {
+            window.location.href = data.siteWeb;
+        });
+
+
+        //_currentFeature = data;
+        //_featurePosition = e.latlng;
+        //_imgUrl = data.url;
+    }
+
+</script>

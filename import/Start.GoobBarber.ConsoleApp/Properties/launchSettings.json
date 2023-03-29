@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Start.GoobBarber.ConsoleApp": {
+      "commandName": "Project",
+      "commandLineArgs": "d:/2021-S01-EXPORT-GOODBARBER-622.csv"
+    }
+  }
+}

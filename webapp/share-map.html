@@ -1,0 +1,1879 @@
+﻿<html>
+<head>
+    <title>Carte St'art</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin="">
+    </script>-->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
+
+    <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./L.Control.Sidebar.css" />
+    <script src="./L.Control.Sidebar.js"></script>
+
+    <script src="./L.Control.Topbar.js"></script>
+    <script src="./GBJSTK.js"></script>
+
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.mapbox.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/css/font-awesome.min.css' rel='stylesheet' />
+
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>-->
+
+    <script src="./jquery.xdomainajax.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+
+    <script src="https://unpkg.com/esri-leaflet@2.4.1/dist/esri-leaflet.js"
+            integrity="sha512-xY2smLIHKirD03vHKDJ2u4pqeHA7OQZZ27EjtqmuhDguxiUvdsOuXMwkg16PQrm9cgTmXtoxA6kwr8KBy3cdcw=="
+            crossorigin=""></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css"
+          integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+          crossorigin="">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js"
+            integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA=="
+            crossorigin=""></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+    <!-- Load JQuery UI -->
+    <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+
+    <script src="./oeuvre.detail.js"></script>
+
+    <script src="./config.js"></script>
+    <link rel="stylesheet" href="./color.css">
+    <link rel="stylesheet" href="./oeuvre.css">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body, p {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 23px;
+            color: #929292;
+        }
+
+        :root {
+            --icon-max-width: 24px;
+            --icon-max-height: 24px;
+        }
+
+        #mapid {
+            width: 600px;
+            height: 400px;
+        }
+
+        .marker-icon img {
+            height: 52px !important;
+            width: 52px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--main-bg-color);
+        }
+
+        .overlay-icon {
+            height: 12px !important;
+            width: 12px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--main-bg-color);
+            background-color: var(--main-bg-color);
+        }
+
+        .overlay-icon-new {
+            height: 12px !important;
+            width: 12px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--new-bg-color);
+            background-color: var(--new-bg-color);
+        }
+
+        .overlay-icon-waiting {
+            height: 12px !important;
+            width: 12px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--waiting-bg-color);
+            background-color: var(--waiting-bg-color);
+        }
+
+        .overlay-icon-approved {
+            height: 12px !important;
+            width: 12px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--approved-bg-color);
+            background-color: var(--approved-bg-color);
+        }
+
+        .overlay-icon-delete {
+            height: 12px !important;
+            width: 12px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--delete-bg-color);
+            background-color: var(--delete-bg-color);
+        }
+
+        .overlay-icon-gallerie {
+            height: 12px !important;
+            width: 12px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--gallerie-bg-color);
+            background-color: var(--gallerie-bg-color);
+        }
+
+        .overlay-title {
+            margin-left: 3px;
+        }
+
+        .overlay-container {
+            display: inline-block;
+            vertical-align: auto;
+            margin-top: 5px;
+        }
+
+        .marker-icon-new img {
+            height: 52px !important;
+            width: 52px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--new-bg-color);
+        }
+
+        .marker-icon-waiting img {
+            height: 52px !important;
+            width: 52px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--waiting-bg-color);
+        }
+
+        .marker-icon-approved img {
+            height: 52px !important;
+            width: 52px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--approved-bg-color);
+        }
+
+        .marker-icon-delete img {
+            height: 52px !important;
+            width: 52px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--delete-bg-color);
+        }
+
+        .marker-icon-gallerie img {
+            height: 52px !important;
+            width: 52px !important;
+            border-radius: 50%;
+            border: solid;
+            border-color: var(--gallerie-bg-color);
+        }
+
+        .mycluster {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: var(--main-bg-color);
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            line-height: 40px;
+            margin-top: -20px;
+            margin-left: -20px;
+        }
+
+        .cluster {
+            background: var(--main-bg-color);
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            border: 1px solid var(--main-bg-color);
+            font-family: monospace;
+        }
+
+        .new {
+            background: var(--new-bg-color);
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            border: 1px solid var(--new-bg-color);
+            font-family: monospace;
+        }
+
+        .waiting {
+            background: var(--waiting-bg-color);
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            border: 1px solid var(--waiting-bg-color);
+            font-family: monospace;
+        }
+
+        .approved {
+            background: var(--approved-bg-color);
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            border: 1px solid var(--approved-bg-color);
+            font-family: monospace;
+        }
+
+        .delete {
+            background: var(--delete-bg-color);
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            border: 1px solid var(--delete-bg-color);
+            font-family: monospace;
+        }
+
+        .top {
+            background: var(--top-bg-color);
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            border: 1px solid var(--top-bg-color);
+            font-family: monospace;
+        }
+
+        .gallerie {
+            background: var(--gallerie-bg-color);
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            border: 1px solid var(--gallerie-bg-color);
+            font-family: monospace;
+        }
+
+        .cluster:before {
+            content: ' ';
+            position: absolute;
+            border-radius: 50%;
+            z-index: -1;
+            top: 1px;
+            left: 1px;
+            right: 1px;
+            bottom: 1px;
+            border: 1px solid white;
+        }
+
+        .digits-1 {
+            font-size: 14px;
+            height: 28px;
+            width: 28px;
+            line-height: 28px;
+            margin-top: -14px;
+            margin-left: -14px;
+        }
+
+        .digits-2 {
+            font-size: 16px;
+            height: 34px;
+            width: 34px;
+            line-height: 35px;
+            margin-top: -17px;
+            margin-left: -17px;
+        }
+
+            .digits-2:before {
+                border-width: 2px;
+            }
+
+        .digits-3 {
+            font-size: 18px;
+            height: 48px;
+            width: 47px;
+            line-height: 47px;
+            border-width: 3px;
+            margin-top: -24px;
+            margin-left: -24px;
+        }
+
+            .digits-3:before {
+                border-width: 3px;
+            }
+
+        .digits-4 {
+            font-size: 18px;
+            height: 58px;
+            width: 58px;
+            line-height: 57px;
+            border-width: 4px;
+            margin-top: -29px;
+            margin-left: -29px;
+        }
+
+            .digits-4:before {
+                border-width: 4px;
+            }
+
+        .sidebar {
+            width: 300px;
+            position: absolute;
+            right: 0;
+            background-color: #929292;
+            font-family: "Arial", Arial, serif;
+        }
+
+        .box {
+            display: flex;
+            padding: 12px 0px 12px 0px;
+        }
+
+            .box > * {
+                flex: 1 1 0;
+            }
+
+        .box-container {
+            display: flex;
+            padding: 5px 0px 5px 0px;
+            border-bottom: 1px solid #f3f3f3;
+        }
+
+            .box-container > * {
+                flex: 1 1 0;
+            }
+
+        .box-link {
+            direction: rtl;
+            display: flex;
+            padding: 5px 0px 5px 0px;
+        }
+
+        .box-line {
+            display: flex;
+            align-items: center;
+            padding: 5px 0px 5px 0px;
+        }
+
+        .box-line-2 {
+            display: flex;
+            align-items: center;
+            padding: 5px 0px 5px 0px;
+        }
+
+            .box-line-2 > * {
+                flex: 1 1 0;
+            }
+
+        .box-grow {
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: stretch;
+        }
+
+        .box-item {
+            flex-shrink: 1;
+        }
+
+        .box-item-grow {
+            flex-grow: 1;
+        }
+
+        .button-navigate {
+            float: right;
+            padding: 0px 0px 0px 55px;
+            color: #1a1b1f;
+            line-height: 42px;
+            background: transparent url(./compass.png) no-repeat 20px 50%;
+            background-size: 24px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button-mail {
+            float: right;
+            padding: 0px 0px 0px 105px;
+            color: #1a1b1f;
+            line-height: 42px;
+            background: transparent url(./alarm.png) no-repeat 70px 50%;
+            background-size: 24px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .accent-black {
+            color: #1a1b1f;
+        }
+
+        .accent-color {
+            color: var(--main-bg-color);
+        }
+
+        .accent-black {
+            color: #1a1b1f;
+        }
+
+        .font-size-18 {
+            font-size: 18px;
+        }
+
+        .user {
+            max-width: var(--icon-max-width);
+            max-height: var(--icon-max-width);
+            padding: 12px 12px 12px 0px;
+        }
+
+        .type-icon {
+            max-width: var(--icon-max-width);
+            max-height: var(--icon-max-width);
+        }
+
+        .type-label {
+            text-align: right;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .artist {
+            max-width: var(--icon-max-width);
+            max-height: var(--icon-max-width);
+            padding: 12px 12px 12px 0px;
+        }
+
+
+        .link {
+            cursor: pointer;
+            background-image: initial;
+            background-position-x: initial;
+            background-position-y: initial;
+            background-size: initial;
+            background-attachment: initial;
+            background-origin: initial;
+            background-clip: initial;
+            padding: 12px;
+        }
+
+        .link-img {
+            max-width: 24px !important;
+            max-height: 24px !important;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        .div-align {
+            text-align: center
+        }
+
+        .fa {
+            padding: 5px;
+        }
+
+        .leaflet-control-locate a {
+            padding: 0px;
+        }
+
+        .leaflet-control-locate.active a {
+            color: var(--main-bg-color);
+        }
+
+        .circleimg {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--main-bg-color);
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+            opacity: 1;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .img-container {
+            position: relative;
+            width: 100%;
+            padding-top: 24px;
+            padding-bottom: 5px;
+        }
+
+        .circle-img-container {
+            width: 250px;
+            height: 250px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%)
+        }
+
+        .img-info {
+            /*background-color: var(--main-bg-color);*/
+            color: white;
+            font-size: 16px;
+            padding: 110px 110px;
+        }
+
+        .navigate-container {
+            margin: 0px 0px 0px -52px;
+        }
+
+        .module-wrapper {
+            text-align: right
+        }
+
+        .module {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .module-button {
+            display: flex;
+            align-items: center;
+            text-align: right;
+            margin-left: auto;
+            background: var(--main-bg-color);
+            color: white;
+            border: 2px solid rgba(255,255,255,.75);
+            border-radius: 10px;
+            width: 100px;
+            cursor: pointer;
+        }
+
+        .locate-button {
+            display: flex;
+            margin: 18px 10px 17px 9px;
+            align-items: center;
+            background: var(--main-bg-color);
+            color: white;
+            border: 2px solid rgba(255,255,255,.75);
+            border-radius: 10px;
+            width: 25px;
+            cursor: pointer;
+        }
+
+        .span-navigate {
+            padding: 0px 0px 0px 10px;
+        }
+
+        .span-update {
+            padding: 0px 0px 0px 11px;
+        }
+
+        .span-locate {
+            margin: 0px 0px 0px 2px;
+            padding: 6px;
+        }
+
+        .button-img {
+            max-width: 15px !important;
+            max-height: 15px !important;
+            padding: 6px 0px 6px 8px;
+        }
+
+        .label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .information {
+            line-height: 23px;
+            font-size: 15px;
+            color: #929292;
+            padding-top: 5px;
+        }
+
+        .box-scrollable {
+            /*max-height: 60%;*/
+            /*overflow-y: scroll;*/
+        }
+
+        .leaflet-container a {
+            color: var(--main-bg-color);
+        }
+
+        .existant {
+            color: var(--main-bg-color);
+        }
+
+        .street {
+            color: blueviolet;
+        }
+
+        .information-complementaire {
+            visibility: hidden
+        }
+
+        .information {
+            height: auto;
+        }
+
+        .leaflet-sidebar > .leaflet-control {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        /*.leaflet-control-geocoder-icon {
+            background-image: url(./recherche.png)
+        }*/
+
+        .footer {
+            position: sticky;
+            bottom: 0;
+            -webkit-box-pack: justify !important;
+            -webkit-box-align: center !important;
+            display: flex !important;
+            flex: 0 0 auto !important;
+            flex-direction: column;
+            border-top: 1px solid rgb(235, 235, 235) !important;
+            padding: 16px 24px !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            font-size: 16px !important;
+            line-height: 20px !important;
+            background-color: white;
+        }
+
+        .header {
+            position: sticky;
+            display: flex;
+            text-align: center;
+            top: 0;
+            background: white;
+            margin-left: -12px;
+            margin-right: -12px;
+            margin-top: -8px;
+        }
+
+        .pic-header {
+            background-position: 50% 70%;
+            height: 300px;
+            border-top: 1px solid #f2f2f2;
+            border-bottom: 1px solid #f2f2f2;
+            padding-bottom: 20px;
+            margin-left: -12px;
+            margin-right: -12px;
+        }
+
+            .pic-header .pic {
+                position: relative;
+                background-position: 50% 50%;
+                height: 100%;
+                background-size: cover;
+                background-image: url(./nopicture.png);
+            }
+
+                .pic-header .pic .pic-icon {
+                    position: absolute;
+                    right: 0px;
+                    bottom: 0px;
+                    height: 50px;
+                    width: 50px;
+                    background-position: right;
+                    background-repeat: no-repeat;
+                    height: 20%;
+                    background-size: contain;
+                    background-image: url(./modifier-photo.png);
+                }
+
+            .pic-header .pic-portrait {
+                position: relative;
+                background-position: 1% 100%;
+                background-size: cover;
+                height: 100%;
+                width: 50%;
+                margin-left: 25%;
+            }
+
+                .pic-header .pic-portrait .pic-icon {
+                    position: absolute;
+                    right: 0px;
+                    bottom: 0px;
+                    height: 50px;
+                    width: 50px;
+                    background-size: contain;
+                    background-image: url(./modifier-photo.png);
+                }
+
+        .submit-button {
+            cursor: pointer !important;
+            display: inline-block;
+            margin: 0px !important;
+            position: relative !important;
+            text-align: center !important;
+            text-decoration: none !important;
+            touch-action: manipulation !important;
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+            font-size: 16px !important;
+            line-height: 20px !important;
+            font-weight: 600 !important;
+            border-radius: 8px !important;
+            outline: none !important;
+            padding: 14px 24px !important;
+            margin-left: 10px !important;
+            margin-right: 10px !important;
+            transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s !important;
+            border: none !important;
+            color: rgb(255, 255, 255) !important;
+            width: 100% !important;
+            background: var(--main-bg-color);
+        }
+
+        .cancel-button {
+            cursor: pointer !important;
+            display: inline-block;
+            margin: 0px !important;
+            position: relative !important;
+            text-align: center !important;
+            text-decoration: none !important;
+            touch-action: manipulation !important;
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+            font-size: 16px !important;
+            line-height: 20px !important;
+            font-weight: 600 !important;
+            border-radius: 8px !important;
+            outline: none !important;
+            padding: 14px 24px !important;
+            margin-left: 10px !important;
+            margin-right: 10px !important;
+            transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s !important;
+            border: none !important;
+            color: rgb(255, 255, 255) !important;
+            width: 100% !important;
+            background: #555;
+        }
+
+
+        .headerA {
+            background: white !important;
+            position: sticky !important;
+            transition: -ms-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s !important;
+            top: 0px !important;
+            z-index: 4 !important;
+            margin-left: -12px;
+            margin-right: -12px;
+        }
+
+        .headerbar {
+            -webkit-box-align: center !important;
+            background: white !important;
+            display: flex !important;
+            align-items: center !important;
+            height: 64px !important;
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+            position: relative !important;
+            z-index: 1 !important;
+            border-bottom: 1px solid rgb(235, 235, 235) !important;
+        }
+
+        .barback {
+            margin-right: auto !important;
+            overflow: hidden !important;
+            display: flex;
+        }
+
+        .statusbar {
+            -webkit-box-align: center !important;
+            align-items: center !important;
+            display: flex !important;
+            padding-right: 12px !important;
+        }
+
+        .status {
+            overflow: clip !important;
+            color: var(--main-bg-color) !important;
+        }
+
+        .barbackbtn {
+            -webkit-box-align: center !important;
+            flex: 1 1 0% !important;
+            display: flex !important;
+            align-items: center !important;
+            height: 48px !important;
+            padding: 0px 8px !important;
+            background-color: transparent !important;
+            border: none !important;
+            color: rgb(34, 34, 34) !important;
+            max-width: 100% !important;
+        }
+
+        .backcontent {
+            padding-right: 8px !important;
+        }
+
+        .barmenuitems {
+            -webkit-box-pack: end !important;
+            display: flex !important;
+            justify-content: flex-end !important;
+            padding-top: 6px !important;
+            padding-left: 8px !important;
+            padding-right: 8px !important;
+        }
+
+        .sharemenu {
+            margin-right: 20px !important;
+        }
+
+        .btnmenu {
+            appearance: none !important;
+            display: inline-block !important;
+            border-radius: 50% !important;
+            border: none !important;
+            outline: none !important;
+            margin: 0px !important;
+            padding: 0px !important;
+            color: rgb(34, 34, 34) !important;
+            cursor: pointer !important;
+            touch-action: manipulation !important;
+            position: relative !important;
+            background: transparent !important;
+            transition: -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s !important;
+        }
+
+        .btncontent {
+            position: relative !important;
+        }
+
+        .btndelete {
+            cursor: pointer !important;
+            display: inline-block !important;
+            position: relative !important;
+            text-align: center !important;
+            width: auto !important;
+            touch-action: manipulation !important;
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+            font-size: 16px !important;
+            line-height: 20px !important;
+            font-weight: 600 !important;
+            border-radius: 8px !important;
+            outline: none !important;
+            padding: 10px !important;
+            transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s !important;
+            -webkit-tap-highlight-color: transparent !important;
+            border: none !important;
+            background: transparent !important;
+            color: var(--main-bg-color) !important;
+            text-decoration: underline !important;
+        }
+    </style>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #main {
+            height: 100%;
+        }
+
+        #mapid {
+            height: 100%;
+            width: 100vw;
+        }
+
+        #map-main-bar {
+            display: grid;
+            grid-template-columns: 1fr 200px 1fr;
+            padding-left: 10px;
+            padding-right: 10px;
+            bottom: -10px;
+            width: 100%;
+        }
+
+        .map-search-root {
+            grid-column: 2;
+            display: block;
+            justify-self: center;
+        }
+
+        .map-search {
+            display: inline-flex !important;
+            -webkit-box-pack: center !important;
+            -webkit-box-align: center !important;
+            background: rgb(255, 255, 255) !important;
+            box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px !important;
+            border-radius: 8px !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 40px;
+        }
+
+        .btn-refresh {
+            -webkit-box-align: center !important;
+            align-items: center !important;
+            background: none !important;
+            border: 2px solid transparent !important;
+            display: inline-flex !important;
+            height: 100% !important;
+            padding: 0px 14px !important;
+            width: 100% !important;
+            color: rgb(34, 34, 34) !important;
+            border-radius: 8px !important;
+            outline: none !important;
+        }
+
+        .btn-add-oeuvre {
+            background-size: cover;
+            width: 24px;
+            height: 24px;
+            background-image: url(./add.png);
+            color: rgb(255, 255, 255);
+        }
+
+        .span-refresh {
+            margin: 0px !important;
+            overflow-wrap: break-word !important;
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            line-height: 1.28571em !important;
+        }
+
+        .span-A {
+            background-color: rgb(34, 34, 34) !important;
+            width: 8px !important;
+            height: 8px !important;
+            margin: 0px 2px !important;
+            border-radius: 100% !important;
+            display: inline-block !important;
+            animation-name: keyframe_8yjgbe !important;
+            animation-duration: 0.8s !important;
+            animation-iteration-count: infinite !important;
+            animation-timing-function: linear !important;
+            animation-fill-mode: both !important;
+            vertical-align: middle !important;
+            animation-delay: -0.3s !important;
+        }
+
+        .span-B {
+            background-color: rgb(34, 34, 34) !important;
+            width: 8px !important;
+            height: 8px !important;
+            margin: 0px 2px !important;
+            border-radius: 100% !important;
+            display: inline-block !important;
+            animation-name: keyframe_8yjgbe !important;
+            animation-duration: 0.8s !important;
+            animation-iteration-count: infinite !important;
+            animation-timing-function: linear !important;
+            animation-fill-mode: both !important;
+            vertical-align: middle !important;
+            animation-delay: -0.15s !important;
+        }
+
+        .span-C {
+            background-color: rgb(34, 34, 34) !important;
+            width: 8px !important;
+            height: 8px !important;
+            margin: 0px 2px !important;
+            border-radius: 100% !important;
+            display: inline-block !important;
+            animation-name: keyframe_8yjgbe !important;
+            animation-duration: 0.8s !important;
+            animation-iteration-count: infinite !important;
+            animation-timing-function: linear !important;
+            animation-fill-mode: both !important;
+            vertical-align: middle !important;
+        }
+
+        .map-loader {
+            -webkit-box-pack: center !important;
+            -webkit-box-align: center !important;
+            align-items: center !important;
+            display: flex !important;
+            height: 100% !important;
+            justify-content: center !important;
+            width: 45px !important;
+        }
+
+        .busy {
+            animation: spin 1s infinite linear;
+            display: inline-block;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            color: #555;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .busy::before {
+            content: "\25E0";
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(359deg);
+            }
+        }
+
+        @keyframes keyframe_8yjgbe {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+
+            30%, 50% {
+                transform: scale(1);
+            }
+        }
+    </style>
+
+    <!--Busy style-->
+    <style>
+        .lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+            .lds-ring div {
+                box-sizing: border-box;
+                display: block;
+                position: absolute;
+                width: 64px;
+                height: 64px;
+                margin: 8px;
+                border: 8px solid var(--main-bg-color);
+                border-radius: 50%;
+                animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+                border-color: var(--main-bg-color) transparent transparent transparent;
+            }
+
+                .lds-ring div:nth-child(1) {
+                    animation-delay: -0.45s;
+                }
+
+                .lds-ring div:nth-child(2) {
+                    animation-delay: -0.3s;
+                }
+
+                .lds-ring div:nth-child(3) {
+                    animation-delay: -0.15s;
+                }
+
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <!--Gallerie style-->
+    <style>
+        .lieu-name {
+            cursor: pointer;
+        }
+
+        .siteweb {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="main">
+        <div id="map-main-bar">
+            <div class="map-search-root">
+                <span id="span-loader" style="display:none">
+                    <div class="map-search" style="flex-direction:row">
+                        <button disabled class="btn-refresh">
+                            <div class="map-loader">
+                                <span>
+                                    <span class="span-A"></span>
+                                    <span class="span-B"></span>
+                                    <span class="span-C"></span>
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                </span>
+                <span id="span-search">
+                    <div class="map-search">
+                        <button id="btnOeuvre" class="btn-refresh">
+                            <svg class="svg-refresh" viewBox="0 0 16 16" height="16" width="16">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      fill="currentColor"
+                                      d="M 10.227 3.152 a 5.552 5.552 0 0 0 -3.595 -0.19 a 5.4 5.4 0 0 0 -2.915 2.041 a 5.14 5.14 0 0 0 -0.955 3.352 a 5.177 5.177 0 0 0 1.413 3.197 a 5.455 5.455 0 0 0 3.175 1.64 a 5.537 5.537 0 0 0 3.535 -0.662 a 5.293 5.293 0 0 0 2.318 -2.66 a 0.75 0.75 0 1 1 1.397 0.549 a 6.793 6.793 0 0 1 -2.973 3.415 a 7.037 7.037 0 0 1 -4.494 0.842 a 6.954 6.954 0 0 1 -4.048 -2.093 a 6.677 6.677 0 0 1 -1.819 -4.124 a 6.64 6.64 0 0 1 1.23 -4.328 A 6.9 6.9 0 0 1 6.22 1.52 a 7.052 7.052 0 0 1 4.568 0.24 a 6.9 6.9 0 0 1 2.462 1.685 V 2.002 a 0.75 0.75 0 0 1 1.5 0 v 3.6 a 0.75 0.75 0 0 1 -0.75 0.75 h -3.692 a 0.75 0.75 0 1 1 0 -1.5 h 2.171 a 5.386 5.386 0 0 0 -2.252 -1.7 Z" />
+                            </svg>
+                            <i class="busy hide"></i>
+                            <div style="color: inherit; margin-left: 7.5px; white-space: nowrap;">
+                                <span class="span-refresh">Rechercher dans cette zone</span>
+                            </div>
+                        </button>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+        <div id="sidebar"></div>
+
+        <div id="mapid"></div>
+
+        <div id="oeuvre-detail" style="display:none">
+            <div class="headerA">
+                <div class="headerbar">
+                    <div class="barback">
+                        <button class="barbackbtn" onclick="handleBack()">
+                            <div class="backcontent">
+                                <svg viewBox="0 0 32 32" focusable="false"
+                                     style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;">
+                                    <g fill="none">
+                                        <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path>
+                                    </g>
+                                </svg>
+                            </div>
+
+                        </button>
+                        <div class="statusbar">
+                            <div class="status" id="status">En attente de validation</div>
+                            <div class="status" id="deleteStatus">Oeuvre supprimée</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box-scrollable">
+                <div class="pic-header">
+                    <div id="feature-img" class="feature-img pic"></div>
+                </div>
+
+                <div>
+                    <div class="box-container">
+                        <div>
+                            <div class="box-line-2">
+                                <div>
+                                    <div class="label accent-black">
+                                        Artiste(s)
+                                        <span class="artist-name accent-color"></span>
+                                    </div>
+                                </div>
+                                <div class="type-label">
+                                    <div class="label accent-color type"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="box-container">
+                    <div>
+
+                        <div class="box-line-2">
+                            <div>
+                                <div class="adresse-ville label accent-color"></div>
+                                <div class="adresse-rue accent-color"></div>
+                            </div>
+                            <div class="module">
+                                <div class="module-button" onclick="navigate()">
+                                    <img class="button-img" src="./google-maps.png" />
+                                    <span class="span-navigate"></span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="box-container">
+                    <div>
+                        <div class="box-line-2">
+                            <div>
+                                <div class="label accent-black">
+                                    Publiée par
+                                    <span class="publisher-name accent-color"></span>
+                                </div>
+                                <span class="date-creation accent-black"></span>
+                            </div>
+                        </div>
+                        <div class="box-line-2 update-info">
+                            <div>
+                                <div class="label accent-black">
+                                    Modifiée par
+                                    <span class="modifier-name accent-color"></span>
+                                </div>
+                                <span class="date-modification accent-black"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-container information-complementaire">
+                    <div class="box-line-2">
+                        <div>
+                            <div class="label accent-black">Informations complémentaires</div>
+                            <div class="information accent-black" id="information"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--Script principal-->
+<script>
+    var _markerPosition;
+    var _featurePosition;
+    var _currentFeature;
+    var _sidebarFeature;
+    var _sidebarMarker;
+    var _imgUrl;
+    var _newCluster;
+    var _oeuvreCluster;
+    var _waitingCluster;
+    var _approvedCluster
+    var _deletedCluster;
+    var _baseControl;
+    var _sidebar;
+    var _topBar;
+    var _addOeuvre;
+    var _currentLocation;
+    var _currentZoom;
+    var _currentBounds;
+    var map;
+
+    let _newOeuvre = false;
+    let _canClose = false;
+    let waitDelete = false;
+    let waitUnDelete = false;
+    let _currentAdressePosition;
+    let _currentAdresse;
+
+    var _userId = '';
+    var _userEmail = '';
+    var _isAdmin = false;
+    var _userIsLogin = false;
+    var _userName = '';
+    var _searchRunning = false;
+    var _hasFirstLoading = false;
+    var _locateControl;
+    var _info = null;
+    var _platform = 'local';
+    var _startGeocode = false;
+
+    var _searchMarker;
+    var _lastAddMarker = null;
+
+    $(document).ready(function () {
+
+        const queryString = window.location.search;
+        const parameters = new URLSearchParams(queryString);
+        const latPosition = parameters.get('lat');
+        const lonPosition = parameters.get('lon');
+        _userId = parameters.get('userId');
+
+        console.log('position ', latPosition, lonPosition, 'userId ', _userId);
+
+        var greenIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+
+        //Mise en place de la map et de son layer de base
+        map = L.map('mapid', {
+            tapHold: true
+        }).fitWorld();
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoiYmNhdHJpbnN0YXJ0IiwiYSI6ImNram92Nnk2czBoYWkyemwxZjB1aXNzMHAifQ.L5p_4OYJHzHzoKkHXs8e9A'
+        }).addTo(map);
+
+        _baseControl = L.control.layers(null, null, { position: 'topleft' });
+        _oeuvreCluster = initializeCluster("Oeuvres");
+        _newCluster = initializeCluster("Nouveautés", "new");
+
+        //Ajout du contrôle SideBar
+        _sidebar = L.control.sidebar('sidebar', {
+            closeButton: true,
+            position: 'left'
+        });
+
+        map.addControl(_sidebar);
+        $(".close").css('display', 'none');
+
+        //Ajout de la top bar
+        _topBar = L.control.topbar('map-main-bar', {
+            position: 'top'
+        })
+        map.addControl(_topBar);
+
+        $('#btnOeuvre').click(function () {
+            searchByLayer(true);
+        });
+
+        //Ajout du contrôle de localisation
+        _locateControl = L.control.locate(
+            {
+                position: 'topleft',
+                setView: false,
+                showCompass: false,
+                zoomControl: false,
+                locateOptions:
+                {
+                    maxZoom: 18,
+                    enableHighAccuracy: true
+                },
+                circleStyle:
+                {
+                    className: 'leaflet-control-locate-circle',
+                    color: 'var(--main-bg-color)',
+                    fillColor: 'var(--main-bg-color)',
+                    fillOpacity: 0.15,
+                    weight: 0
+                }
+            });
+
+
+        map.on('locationfound', onLocationFound);
+        map.on('locationerror', onLocationError);
+        map.on('doubleClickZoom', function (e) {
+            console.log('tap hold');
+        })
+
+
+        //Gestion après zoom arrière
+        map.on('zoomend', debounce((e) => {
+
+            var zoom = map.getZoom();
+
+            if (_currentZoom || _currentZoom != zoom || _startGeocode) {
+
+                if (_currentZoom && zoom < _currentZoom) {
+                    searchByLayer(true);
+                }
+                else if (_startGeocode) {
+                    _startGeocode = false;
+                    searchByLayer(true);
+                }
+
+                _currentZoom = zoom;
+            }
+
+        }, 750));
+
+        //Ajout du contrôle de localisation et lancement de la détection de position
+        map.addControl(_locateControl);
+
+        
+        //Ajout du contrôle de recherche
+        var searchControl = L.Control.geocoder({
+            position: 'topleft',
+            collapsed: true,
+            placeholder: 'Rechercher...',
+            defaultMarkGeocode: false,
+            geocoder: L.Control.Geocoder.nominatim()
+        })
+            .on('markgeocode', function (e) {
+
+                _locateControl.stop();
+                _startGeocode = true;
+
+                var type = e.geocode.properties.type;
+                var zoom = 18;
+                if (type == "primary" || type == "pedestrian" || type == "residential" || type == "house") {
+                    zoom = 18;
+                }
+                else if (type == "city" || type == "postcode" || type == "political") {
+                    zoom = 13
+                }
+                else if (type == "administrative") {
+                    zoom = 8
+                }
+                else {
+                    zoom = 2
+                }
+
+                if (_currentZoom == zoom) {
+                    zoom = zoom - 1
+                }
+
+                map.setView(e.geocode.center, zoom);
+
+                if (_searchMarker) {
+                    map.removeLayer(_searchMarker);
+                }
+                _searchMarker = L.marker(e.geocode.center, { icon: greenIcon }).addTo(map);
+
+            })
+        searchControl.addTo(map);
+
+        _baseControl.addTo(map)
+
+        //Gestion des pushpin après recherche
+        map.on('click', function (e) {
+            console.log('click');
+            searchControl.options.geocoder.reverse(
+                e.latlng,
+                map.options.crs.scale(map.getZoom()),
+                function (results) {
+
+                    var r = results[0];
+                    if (r) {
+                        if (_searchMarker) {
+                            map.removeLayer(_searchMarker);
+                        }
+                    }
+                })
+        });
+
+        var specificPosition = L.latLng(latPosition, lonPosition);
+        map.setView(specificPosition, 8);
+        searchByLayer(true);
+    });
+
+    function createPolygonFromBoundsSensNormal(latLngBounds) {
+        latlngs = [];
+
+        //Dans le sens des aiguilles d'une montre
+        latlngs.push(Reverse(latLngBounds.getSouthWest()));//bottom left
+        latlngs.push(Reverse(latLngBounds.getNorthWest()));//top left
+        latlngs.push(Reverse(latLngBounds.getNorthEast()));//top right
+        latlngs.push(Reverse(latLngBounds.getSouthEast()));//bottom right
+
+        return new L.polygon(latlngs);
+    }
+
+    function Reverse(LatLng) {
+        var lat = parseFloat(LatLng.lng),
+            lng = parseFloat(LatLng.lat);
+
+        return [lat, lng];
+    }
+
+    const debounce = (func, delay) => {
+        let inDebounce
+        return function () {
+            const context = this
+            const args = arguments
+            clearTimeout(inDebounce)
+            inDebounce = setTimeout(() => func.apply(context, args), delay)
+        }
+    }
+
+    //Lance une recherche des oeuvres en fonction d'une position
+    function searchByLayer(refresh) {
+        if (_searchRunning) {
+            return;
+        }
+
+        _searchRunning = true;
+
+        if (refresh) {
+
+            if (_lastAddMarker !== null) {
+                map.setView(_lastAddMarker, 18);
+                _lastAddMarker = null;
+            }
+
+            var bounds = map.getBounds();
+
+            if (!_currentBounds || _currentBounds != bounds) {
+                _currentBounds = bounds;
+            }
+        }
+
+        var polygonReverse = createPolygonFromBoundsSensNormal(_currentBounds);
+        var jsonReverse = polygonReverse.toGeoJSON();
+        var location = JSON.stringify(jsonReverse.geometry);
+        var userId = _userId;
+        var isAdmin = false;
+
+        if (location) {
+            $('#span-loader').css("display", "inline");
+            $('#span-search').css("display", "none");
+            $.ajax({
+                url: appConfig.RechercheOeuvreLocalisationFunction,
+                data:
+                {
+                    "location": location,
+                    "userId": userId,
+                    "isAdmin": isAdmin
+                },
+                cache: false,
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                },
+                crossDomain: true,
+                success: function (data) {
+                    displayData(data);
+                    $('#span-loader').css("display", "none");
+                    $('#span-search').css("display", "inline");
+                    _searchRunning = false;
+
+                    if (!_hasFirstLoading) {
+                        _hasFirstLoading = true;
+                    }
+                },
+                error: function (data) {
+                    console.log("Error", data);
+                    $('#span-loader').css("display", "none");
+                    $('#span-search').css("display", "inline");
+                    _searchRunning = false;
+                }
+            });
+        }
+        else {
+            _searchRunning = false;
+        }
+    };
+
+    //Affiche les oeuvres trouvées sur la map
+    function displayData(cosmosdata) {
+        if (cosmosdata) {
+            _oeuvreCluster.clearLayers();
+            _oeuvreCluster.addLayer(addMarkerToCluster({
+                "data": cosmosdata.valid,
+                "typePoint": "simple",
+                "cluster": _oeuvreCluster,
+            }));
+
+            _newCluster.clearLayers();
+            _newCluster.addLayer(addMarkerToCluster({
+                "data": cosmosdata.new,
+                "typePoint": "new",
+                "cluster": _newCluster,
+            }));
+        }
+    };
+
+    //Ajoute les oeuvres trouvées à la map
+    function addMarkerToCluster(options) {
+
+        var geoJsonLayer = L.geoJson(options.data, {
+            onEachFeature: (feature, layer) => onEachFeature(feature, layer, options),
+            pointToLayer: (feature, layer) => createPointMarkerByOptions(feature, layer, options)
+        })
+
+        return geoJsonLayer;
+
+    }
+
+    //Création d'un cluster
+    function initializeCluster(title, classCluster) {
+        cluster = new L.MarkerClusterGroup({
+            iconCreateFunction: (c) => {
+                var digits = (c.getChildCount() + '').length;
+                var className = classCluster + " cluster digits-";
+                return L.divIcon({
+                    html: c.getChildCount(),
+                    className: className + digits,
+                    iconSize: null
+                });
+            }
+        });
+
+        cluster.addTo(map);
+        var classOverlay = classCluster
+            ? "overlay-icon-" + classCluster
+            : "overlay-icon";
+
+        _baseControl.addOverlay(cluster, "<div class='overlay-container'><div style='display:flex'><div class='" + classOverlay + "'></div><span class='overlay-title'>" + title + "</span></div></div>");
+
+        return cluster;
+    }
+
+    //Vérification de la validité d'une url
+    function UrlExists(url) {
+        var http = new XMLHttpRequest();
+        http.open('HEAD', url, false);
+        http.send();
+        return http.status != 404;
+    }
+
+    //Présentation des oeuvres dans la popup
+    function onEachFeature(feature, layer, options) {
+
+        layer.on('click', function (e) {
+
+            clearSideBar();
+            showSideBar(feature, e);
+            setTimeout(function () {
+                _sidebar.show();
+            }, 250);
+        });
+    }
+
+    //Gestion de la présentation du détail d'une oeuvre
+    function showSideBar(feature, e) {
+        clearSideBar();
+        _canClose = true;
+        _sidebarFeature = feature;
+        _sidebarMarker = e;
+        _currentFeature = _sidebarFeature.properties;
+        _featurePosition = e.latlng;
+        _imgUrl = _currentFeature.url;
+
+        $("#sidebar").html($("#oeuvre-detail").html()).show(500);
+        loadDetailOeuvre(feature, e);
+    }
+
+    //Gestion de la présentation du détail d'une oeuvre
+    function showSideBarForm(feature, e) {
+
+        clearSideBar();
+        _canClose = false;
+        _sidebarFeature = feature;
+        _sidebarMarker = e;
+
+        $("#sidebar").html($("#oeuvre-form-content").html()).show(500);
+        loadFormOeuvre(feature, e);
+        addSearchAddress();
+    }
+
+    //Ferme la side bar
+    function closeSideBar(refresh) {
+        clearSideBar();
+        _sidebar.hide();
+        searchByLayer(refresh);
+    }
+
+    function clearSideBar() {
+        $("#sidebar").empty();
+    }
+
+    function handleBack(refresh) {
+        if (!refresh) {
+            refresh = false;
+        }
+
+        if (_canClose) {
+            closeSideBar(refresh);
+        }
+        else {
+            showSideBar(_sidebarFeature, _sidebarMarker);
+        }
+    }
+
+
+    //Ajout des points sur la map
+    function createPointMarkerByOptions(feature, latlng, options) {
+
+        var url = feature.properties && feature.properties.imageUrl
+            ? feature.properties.imageUrl
+            : "./pas-de-photos.png";
+
+        url = correctImageUrl(url);
+
+        //Définition du style à appliquer
+        var typePoint = options.typePoint;
+        var className = 'marker-icon'
+
+        if (typePoint === "simple") {
+            className = 'marker-icon';
+        }
+        else if (typePoint === "new") {
+            className = 'marker-icon-new';
+        }
+        
+        feature.properties.url = url
+        var img = "<img src='" + url + "'/>"
+
+        var smallIcon = new L.divIcon({
+            html: img,
+            iconSize: [100, 100],
+            className: className
+        });
+
+
+        var lat = (latlng.lat);
+        var lng = (latlng.lng);
+        //Ajout du marker sur la map
+        return new L.Marker([lng, lat], { icon: smallIcon });
+    }
+
+    function correctImageUrl(url) {
+        if (url.endsWith(".jpeg.jpeg")) {
+            url = url.replace(".jpeg.jpeg", ".jpg");
+        }
+        else if (url.endsWith(".jpeg")) {
+            url = url.replace(".jpeg", ".jpg");
+        }
+        else if (url.endsWith("png.jpg")) {
+            url = url.replace("png.jpg", ".jpg");
+        }
+
+        if (!url.endsWith(".jpg") && !url.endsWith(".png")) {
+            url = url + ".jpg";
+        }
+
+        return url.replace(/'/g, '%27')
+    }
+
+    function createParcoursMarker(feature, latlng, options) {
+
+        var url = feature.properties.imageUrl;
+        if (url.endsWith(".jpeg.jpeg")) {
+            url = url.replace(".jpeg.jpeg", ".jpg");
+        }
+        else if (url.endsWith(".jpeg")) {
+            url = url.replace(".jpeg", ".jpg");
+        }
+        else if (url.endsWith("png.jpg")) {
+            url = url.replace("png.jpg", ".jpg");
+        }
+
+        if (!url.endsWith(".jpg") && !url.endsWith(".png")) {
+            url = url + ".jpg";
+        }
+
+        var img = "<img src='" + url + "'/>"
+
+        var smallIcon = new L.divIcon({
+            html: img,
+            iconSize: [100, 100],
+            className: 'marker-icon'
+        });
+
+        //Ajout du marker sur la map
+        return new L.Marker(latlng, { icon: smallIcon });
+    }
+
+    //Lors de la localisation
+    function onLocationFound(e) {
+
+        if (_markerPosition) {
+            _markerPosition.removeFrom(map);
+        }
+        _markerPosition = L.marker(e.latlng);
+        _markerPosition.addTo(map);
+
+        map.setView(e.latlng, 18);
+
+        if (!_currentLocation || e.latlng != _currentLocation.latlng) {
+
+            _currentLocation = e;
+
+            if (_locateControl._active || !_hasFirstLoading) {
+                _locateControl.stop();
+                searchByLayer(true);
+            }
+        }
+    }
+
+    //Gestion des erreurs
+    function onLocationError(e) {
+        //alert(e.message);
+    }
+
+    //Calcule de la distance entre un point et un marker en km
+    function calcDistance(point) {
+
+        var distance = _markerPosition._latlng.distanceTo(point.latlng) / 1000;
+        return distance.toLocaleString(
+            undefined,
+            {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+    }
+
+    //Envoie de mail
+    function mailTo() {
+        var subject = encodeURIComponent("Mise à jour de l'oeuvre");
+
+        var body = encodeURIComponent("Choisir parmi l'une des deux possibilités :")
+            + "%0D%0A%09" + encodeURIComponent("L'œuvre a été remplacée")
+            + "%0D%0A" + encodeURIComponent("OU")
+            + "%0D%0A%09" + encodeURIComponent("Aucune oeuvre n'est présente")
+            + "%0D%0A%0D%0A" + encodeURIComponent("Les informations suivantes permettent d'identifier l'œuvre à mettre à jour, merci de ne pas modifier les élements ci-dessous :")
+            + "%0D%0A"
+            + "%0D%0AImage : " + _currentFeature.url
+            + "%0D%0AMarqueur : " + _currentFeature.marqueur
+            + "%0D%0APosition : [" + _featurePosition.lat + " , " + _featurePosition.lng + "]";
+
+        var mailto = "mailto:participation@start-prod.fr?"
+            + "subject=" + subject
+            + _currentFeature.marqueur
+            + "&body=" + body;
+
+        //$(".button-mail").attr('href', mailto);
+        window.location.href = mailto;
+    }
+
+    //Navigation
+    function navigate() {
+        var link = "https://www.google.com/maps/dir/?api=1&destination=" + _featurePosition.lat + "," + _featurePosition.lng + "&travelmode=walking&dir_action=navigate";
+        window.open(link, '_blank');
+    }
+
+</script>

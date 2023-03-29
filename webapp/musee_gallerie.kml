@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>
+            The Wall
+          </value>
+        </Data>
+        <Data name="rue">
+          <value>51 rue de Presles</value>
+        </Data>
+        <Data name="cp">
+          <value>93300</value>
+        </Data>
+        <Data name="ville">
+          <value>Aubervilliers</value>
+        </Data>
+        <Data name="activite">
+          <value></value>
+        </Data>
+        <Data name="type">
+          <value>Galerie</value>
+        </Data>
+        <Data name="tel">
+          <value></value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://www.thewallgalerie.fr</value>
+        </Data>
+        <Data name="information">
+          <value></value>
+        </Data>
+        <Data name="marqueur">
+          <value>
+            The Wall
+          </value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/The Wall.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value>https://app.start-prod.fr/partenaires-1/i/49949077/lakarriere</value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps?q=51+Rue+de+Presles,+93500+Aubervilliers&amp;ftid=0x47e66c47a1132d3b:0x733612573c5904eb</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.39566,48.9079</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>
+            Street Art Anarchy
+          </value>
+        </Data>
+        <Data name="rue">
+          <value>41 rue de Verneuil</value>
+        </Data>
+        <Data name="cp">
+          <value>75007</value>
+        </Data>
+        <Data name="ville">
+          <value>Paris</value>
+        </Data>
+        <Data name="activite">
+          <value>espace dédié au Street Art et Graffiti.</value>
+        </Data>
+        <Data name="type">
+          <value>Galerie</value>
+        </Data>
+        <Data name="tel">
+          <value></value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://www.streetartanarchy.com</value>
+        </Data>
+        <Data name="information">
+          <value></value>
+        </Data>
+        <Data name="marqueur">
+          <value>
+            Street Art Anarchy
+          </value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/Street Art Anarchy.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value></value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps?q=41+Rue+de+Verneuil,+75007+Paris&amp;ftid=0x47e66e2a270dc6ad:0x7e25189a78b1beec</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.3277,48.85831</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>
+            Le Cellier
+          </value>
+        </Data>
+        <Data name="rue">
+          <value>4 bis rue de Mars</value>
+        </Data>
+        <Data name="cp">
+          <value>51100</value>
+        </Data>
+        <Data name="ville">
+          <value></value>
+        </Data>
+        <Data name="activite">
+          <value></value>
+        </Data>
+        <Data name="type">
+          <value>Galerie</value>
+        </Data>
+        <Data name="tel">
+          <value></value>
+        </Data>
+        <Data name="siteweb">
+          <value></value>
+        </Data>
+        <Data name="information">
+          <value>Mer-Dim de 14h à 18h.</value>
+        </Data>
+        <Data name="marqueur">
+          <value>
+            Le Cellier
+          </value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/Le Cellier.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value></value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps?q=4+Rue+de+Mars,+51100+Reims&amp;ftid=0x47e975ac402441f9:0x62c20c3cc3c7c318</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>4.03263,49.25782</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>
+            Galerie Wallworks
+          </value>
+        </Data>
+        <Data name="rue">
+          <value>4 rue Martel</value>
+        </Data>
+        <Data name="cp">
+          <value>75010</value>
+        </Data>
+        <Data name="ville">
+          <value>Paris</value>
+        </Data>
+        <Data name="activite">
+          <value>Street Art, Art contemporain français et indonésien</value>
+        </Data>
+        <Data name="type">
+          <value>Galerie</value>
+        </Data>
+        <Data name="tel">
+          <value>09 54 30 29 51</value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://www.galerie-wallworks.com</value>
+        </Data>
+        <Data name="information">
+          <value>Lun-sam 14h-19h et sur RDV</value>
+        </Data>
+        <Data name="marqueur">
+          <value>
+            Galerie Wallworks
+          </value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/Galerie Wallworks.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value></value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps?q=4+Rue+Martel,+75010+Paris&amp;ftid=0x47e66e13a050f181:0x724f6f7ab8befec0</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.35297,48.87356</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>
+            Galerie W Eric Landau
+          </value>
+        </Data>
+        <Data name="rue">
+          <value>44 rue Lepic</value>
+        </Data>
+        <Data name="cp">
+          <value>75018</value>
+        </Data>
+        <Data name="ville">
+          <value>Paris</value>
+        </Data>
+        <Data name="activite">
+          <value></value>
+        </Data>
+        <Data name="type">
+          <value>Galerie</value>
+        </Data>
+        <Data name="tel">
+          <value>01 42 54 80 24</value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://www.galeriew.com</value>
+        </Data>
+        <Data name="information">
+          <value>Tous les jours de 10h30 à 20h</value>
+        </Data>
+        <Data name="marqueur">
+          <value>
+            Galerie W Eric Landau
+          </value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/Galerie W Eric Landau.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value></value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps?q=44+Rue+Lepic,+75018+Paris&amp;ftid=0x47e66e4fe6bbb011:0x4f94d6f68828921b</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.33457,48.88627</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>
+            Galerie Lélia Mordoch
+          </value>
+        </Data>
+        <Data name="rue">
+          <value>50 rue Mazarine</value>
+        </Data>
+        <Data name="cp">
+          <value>75006</value>
+        </Data>
+        <Data name="ville">
+          <value>Paris</value>
+        </Data>
+        <Data name="activite">
+          <value></value>
+        </Data>
+        <Data name="type">
+          <value>Galerie</value>
+        </Data>
+        <Data name="tel">
+          <value>01 53 10 88 52</value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://www.leliamordochgalerie.com</value>
+        </Data>
+        <Data name="information">
+          <value>Mar-sam 13h-19h</value>
+        </Data>
+        <Data name="marqueur">
+          <value>
+            Galerie Lélia Mordoch
+          </value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/Galerie Lélia Mordoch.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value></value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps?q=50+Rue+Mazarine,+75006+Paris&amp;ftid=0x47e671d8c7670697:0x93379ae003b11e27</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.3377,48.85497</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>
+            Galerie Lazarew
+          </value>
+        </Data>
+        <Data name="rue">
+          <value>14 rue du Perche</value>
+        </Data>
+        <Data name="cp">
+          <value>75003</value>
+        </Data>
+        <Data name="ville">
+          <value>Paris</value>
+        </Data>
+        <Data name="activite">
+          <value>Art urbain et contemporain</value>
+        </Data>
+        <Data name="type">
+          <value>Galerie</value>
+        </Data>
+        <Data name="tel">
+          <value>01 44 61 28 73</value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://www.galerie-lazarew.fr</value>
+        </Data>
+        <Data name="information">
+          <value>Mar-ven 14h-19h, samedi 10h-20h</value>
+        </Data>
+        <Data name="marqueur">
+          <value>
+            Galerie Lazarew
+          </value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/Galerie Lazarew.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value></value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps?q=14+Rue+du+Perche,+75003+Paris&amp;ftid=0x47e66e040637a875:0xa064a129810ea3b4</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.3611,48.86111</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>
+            Galerie GZ
+          </value>
+        </Data>
+        <Data name="rue">
+          <value>19 rue de Miromesnil</value>
+        </Data>
+        <Data name="cp">
+          <value>75008</value>
+        </Data>
+        <Data name="ville">
+          <value>Paris</value>
+        </Data>
+        <Data name="activite">
+          <value>Art contemporain Street Art</value>
+        </Data>
+        <Data name="type">
+          <value>Galerie</value>
+        </Data>
+        <Data name="tel">
+          <value>01 40 17 99 40</value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://www.galeriegz.fr</value>
+        </Data>
+        <Data name="information">
+          <value>Lun-ven 10h30-18h30 ; samedi sur RDV</value>
+        </Data>
+        <Data name="marqueur">
+          <value>
+            Galerie GZ
+          </value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/Galerie GZ.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value></value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps?q=19+Rue+de+Miromesnil,+75008+Paris&amp;ftid=0x47e66fc9305e7ae9:0xb87e7e2064dd9bd3</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.31586,48.87243</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>
+            Galerie Mathgoth
+          </value>
+        </Data>
+        <Data name="rue">
+          <value>34 rue Hélène Brion</value>
+        </Data>
+        <Data name="cp">
+          <value>75008</value>
+        </Data>
+        <Data name="ville">
+          <value>Paris</value>
+        </Data>
+        <Data name="activite">
+          <value></value>
+        </Data>
+        <Data name="type">
+          <value>Galerie</value>
+        </Data>
+        <Data name="tel">
+          <value></value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://www.mathgoth.com</value>
+        </Data>
+        <Data name="information">
+          <value>
+            Horaires :
+            Mer-Sam : 14h - 19 h
+          </value>
+        </Data>
+        <Data name="marqueur">
+          <value>Galerie Mathgoth</value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/Galerie Mathgoth.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value></value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps?q=34+Rue+H%C3%A9l%C3%A8ne+Brion,+75013+Paris&amp;ftid=0x47e6723bcc9a94c7:0x1eaeb51bde0b81c9</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.38026,48.828</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>
+            Galerie Le Feuvre &amp; Roze
+          </value>
+        </Data>
+        <Data name="rue">
+          <value>164 &amp; 178 rue du Faubourg Saint-Honoré</value>
+        </Data>
+        <Data name="cp">
+          <value>75008</value>
+        </Data>
+        <Data name="ville">
+          <value>Paris</value>
+        </Data>
+        <Data name="activite">
+          <value></value>
+        </Data>
+        <Data name="type">
+          <value>Galerie</value>
+        </Data>
+        <Data name="tel">
+          <value>01 40 07 11 11</value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://www.lefeuvreroze.com</value>
+        </Data>
+        <Data name="information">
+          <value>
+            Horaires :
+            Mar-Ven 11h-19h ; sam 13h30-19h
+          </value>
+        </Data>
+        <Data name="marqueur">
+          <value>Galerie Le Feuvre &amp; Roze</value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/Galerie Le Feuvre &amp; Roze.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value></value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps?q=164+Rue+du+Faubourg+Saint-Honor%C3%A9,+75008+Paris&amp;ftid=0x47e66fc659271653:0xc3ed451c73627225</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.30939,48.87357</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>
+            La Karrière
+          </value>
+        </Data>
+        <Data name="rue">
+          <value>RD 35</value>
+        </Data>
+        <Data name="cp">
+          <value>21700</value>
+        </Data>
+        <Data name="ville">
+          <value> Villars-Fontaine</value>
+        </Data>
+        <Data name="activite">
+          <value> MUSÉE D'ART URBAIN ET DE STREET ART</value>
+        </Data>
+        <Data name="type">
+          <value>Musée</value>
+        </Data>
+        <Data name="tel">
+          <value>06 30 25 42 90</value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://villart.fr</value>
+        </Data>
+        <Data name="information">
+          <value>
+            JUIN/OCTOBRE/NOVEMBRE/DECEMBRE
+            le week-end (samedi + dimanche) + jours fériés de 11 à 18 heures
+            JUILLET/AOUT/SEPTEMBRE
+            du mercredi au dimanche inclus + jours fériés, de 11 à 18 heures
+          </value>
+        </Data>
+        <Data name="marqueur">
+          <value>
+            La_Karriere
+          </value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/La_Karriere.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value>https://app.start-prod.fr/partenaires-1/i/49948926/mausa</value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2713.652833726217!2d4.907738351130995!3d47.1450671790546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f28e4a417ff6af%3A0xd708d6425e9f8b4c!2sLa%20Karri%C3%A8re%20-%2021700%20Villars-Fontaine!5e0!3m2!1sfr!2sfr!4v1600594640102!5m2!1sfr!2sfr</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>4.90993,47.14506</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>Mausa Vauban</value>
+        </Data>
+        <Data name="rue">
+          <value>Place de la porte de Belfort </value>
+        </Data>
+        <Data name="cp">
+          <value>68600</value>
+        </Data>
+        <Data name="ville">
+          <value>NEUF-BRISACH</value>
+        </Data>
+        <Data name="activite">
+          <value>MUSÉE D'ART URBAIN ET DE STREET ART</value>
+        </Data>
+        <Data name="type">
+          <value>Musée</value>
+        </Data>
+        <Data name="tel">
+          <value>03 89 72 56 66</value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://mausa.fr/</value>
+        </Data>
+        <Data name="information">
+          <value>Ouvert du mardi au dimanche de 11h à 19h</value>
+        </Data>
+        <Data name="marqueur">
+          <value>mausa</value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/mausa.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value>https://app.start-prod.fr/partenaires-1/i/49948926/mausa </value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2668.918538255972!2d7.52436025116224!3d48.01528367911189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47916df37e051f23%3A0xeaf4633d6ef17b21!2sMAUSA%20Vauban%20-%20Mus%C3%A9e%20d&amp;#39;Art%20Urbain%20et%20du%20Street%20Art!5e0!3m2!1sfr!2sfr!4v1600594470004!5m2!1sfr!2sfr</value>
+        </Data>
+        <Data name="">
+          <value></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>7.52655,48.01528</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <ExtendedData>
+        <Data name="date">
+          <value>10/08/2020</value>
+        </Data>
+        <Data name="nom">
+          <value>Galerie Artelie - Eliane Kowsman</value>
+        </Data>
+        <Data name="rue">
+          <value>25 rue de Penthièvre</value>
+        </Data>
+        <Data name="cp">
+          <value>75008</value>
+        </Data>
+        <Data name="ville">
+          <value>Paris</value>
+        </Data>
+        <Data name="activite">
+          <value>Art contemporain</value>
+        </Data>
+        <Data name="type">
+          <value>Galerie</value>
+        </Data>
+        <Data name="tel">
+          <value>01 43 59 27 21</value>
+        </Data>
+        <Data name="siteweb">
+          <value>https://www.artelie.fr</value>
+        </Data>
+        <Data name="information">
+          <value>
+            Horaires :
+            du lundi au samedi de 10h à 19h
+          </value>
+        </Data>
+        <Data name="marqueur">
+          <value>Galerie Artelie - Eliane Kowsman</value>
+        </Data>
+        <Data name="url">
+          <value>https://start-prod.fr/carte/images/partenaires/Galerie Artelie - Eliane Kowsman.jpg</value>
+        </Data>
+        <Data name="goodbarber">
+          <value>https://app.start-prod.fr/partenaires-1/i/49906522/galerie-artelie-eliane-kowsman</value>
+        </Data>
+        <Data name="googlemap">
+          <value>https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2430891999174!2d2.313344115674879!3d48.872642279288904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc924e28d15%3A0xfaf3f76b4b387b5e!2sArtelie!5e0!3m2!1sfr!2sfr!4v1600913242546!5m2!1sfr!2sfr</value>
+        </Data>
+        <Data name="">
+          <value>&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2430892052503!2d2.3133387511934727!3d48.87264227918723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfaf3f76b4b387b5e!2sArtelie!5e0!3m2!1sfr!2sfr!4v1600594513767!5m2!1sfr!2sfr&quot; width=&quot;600&quot; height=&quot;450&quot; frameborder=&quot;0&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; aria-hidden=&quot;false&quot; tabindex=&quot;0&quot;&gt;&lt;/iframe&gt;</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>2.31553,48.87264</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

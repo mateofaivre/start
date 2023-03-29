@@ -1,0 +1,537 @@
+﻿<div class="headerA">
+    <div class="headerbar">
+        <div class="barback">
+            <button id="backbtn" class="barbackbtn" onclick="handleBack()">
+                <div class="backcontent">
+                    <svg viewBox="0 0 32 32" focusable="false"
+                         style="display: block; fill: none; height: 16px; width: 16px;
+                          stroke: currentcolor; stroke-width: 4; overflow: visible;">
+                        <g fill="none">
+                            <path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+
+            </button>
+            <div class="statusbar">
+                <div class="status" id="status">En attente de validation</div>
+                <div class="status" id="deleteStatus">Oeuvre supprimée</div>
+            </div>
+            <button class="btndelete" id="delete" type="button">Supprimer</button>
+            
+        </div>
+        <!--<div class="barmenuitems">
+            <div class="sharemenu">
+                <button aria-label="Partager" type="button" class="btnmenu">
+                    <span class="sharebtncontent">
+                        <svg viewBox="0 0 32 32" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible;">
+                            <g fill="none">
+                                <path d="M27 18v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-9"></path>
+                                <path d="M16 3v23V3z"></path>
+                                <path d="M6 13l9.293-9.293a1 1 0 0 1 1.414 0L26 13"></path>
+                            </g>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+            <div>
+                <button type="button" class="btnmenu">
+                    <span class="btncontent">
+                        <svg viewBox="0 0 32 32" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible;">
+                            <path d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z">
+                            </path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>-->
+    </div>
+
+</div>
+
+<div class="box-scrollable">
+    <!--<div class="img-container">
+        <div class="circle-img-container">
+            <img class="circleimg feature-img" />
+        </div>
+    </div>-->
+
+    <div class="pic-header">
+        <div id="feature-img" class="feature-img pic"></div>
+    </div>
+
+    <div>
+        <div class="box-container">
+            <div>
+                <div class="box-line-2">
+                    <div>
+                        <div class="label accent-black">
+                            Artiste(s)
+                            <span class="artist-name accent-color"></span>
+                        </div>
+                    </div>
+                    <div class="type-label">
+                        <div class="label accent-color type"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="box-container">
+        <div>
+
+            <div class="box-line-2">
+                <div>
+                    <div class="adresse-ville label accent-color"></div>
+                    <div class="adresse-rue accent-color"></div>
+                </div>
+                <div class="module">
+                    <div class="module-button" onclick="navigate()">
+                        <img class="button-img" src="./google-maps.png" />
+                        <span class="span-navigate"></span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="box-container">
+        <div>
+            <div class="box-line-2">
+                <div>
+                    <div class="label accent-black">
+                        Publiée par
+                        <span class="publisher-name accent-color"></span>
+                    </div>
+                    <span class="date-creation accent-black"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-container information-complementaire">
+        <div class="box-line-2">
+            <div>
+                <div class="label accent-black">Informations complémentaires</div>
+                <div class="information accent-black"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<footer class="footer">
+    <span id="msgConfirmation" class="accent-color" style="padding-bottom:10px;"></span>
+    <div style="display:flex">
+        <button class="submit-button" type="button" id="valider">
+            <span id="lblOui">
+                Oui
+            </span>
+        </button>
+        <button class="cancel-button" type="button" id="annuler">
+            <span id="lblNon">
+                Non
+            </span>
+        </button>
+    </div>
+    <div id="busy-save" class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div style="display:flex">
+        <button class="submit-button" type="button" id="modifier">
+            <span>
+                Modifier
+            </span>
+        </button>
+        <button class="submit-button" type="button" id="approuver">
+            <span>
+                Autoriser
+            </span>
+        </button>
+        <button class="submit-button" type="button" id="reintegrer">
+            <span>
+                Réintégrer
+            </span>
+        </button>
+    </div>
+
+
+</footer>
+
+
+<script>
+
+    let waitDelete = false;
+    let waitUnDelete = false;
+    $(document).ready(function () {
+        $(".close").css('display', 'none');
+    });
+
+    function loadDetailOeuvre(feature, e) {
+        //Initialisation des données à afficher
+        $(".button-navigate").attr('href', '');
+        $(".button-navigate").html("distance indéterminée");
+        $(".adresse-rue").html('rue inconnue');
+        $(".adresse-ville").html('Ville inconnu');
+        $(".date-creation").html('Date de création non renseignée');
+        $(".type").html('Type inconnu');
+        $(".artist-name").html('Non renseigné(s)');
+        $(".publisher-name").html('Inconnu');
+        $(".information").html('Aucune information à ce jour');
+
+        //Récupération des données
+        var data = feature.properties;
+
+        console.log('Détails ', data);
+        $("#modifier").css('display', 'none');
+        $("#approuver").css('display', 'none');
+        $("#valider").css('display', 'none');
+        $("#annuler").css('display', 'none');
+        $('.btndelete').attr("style", "display: none !important");
+        $("#status").css('display', 'none');
+        $("#deleteStatus").css('display', 'none');
+        $("#reintegrer").css('display', 'none');
+        $("#busy-save").css('display', 'none');
+
+        console.log('isAdmin', _isAdmin);
+        console.log('isLogin', _userIsLogin);
+        console.log('oeuvre status', data.status);
+
+        if (_userIsLogin) {
+            if (data.status == 0) {
+                $("#modifier").css('display', 'inline-block');
+            }
+
+            if (_isAdmin) {
+
+                if (data.status !== 2) {
+                    $('.btndelete').attr("style", "display: inline-block !important");
+                }
+
+                if (data.status == 2) {
+                    //$('.btndelete').attr("style", "display: inline-block !important");
+                    $("#deleteStatus").css('display', 'inline-block');
+                    $("#reintegrer").css('display', 'inline-block');
+                }
+                
+
+                if (data.status == 1) {
+                    $("#approuver").css('display', 'inline-block');
+                    $("#modifier").css('display', 'inline-block');
+                }
+            }
+            else {
+                $('.btndelete').attr("style", "display: none !important");
+            }
+        }
+
+        //Donnée en attente de validation
+        if (data.status == 1) {
+            $("#status").css('display', 'inline-block');
+        }
+
+
+        //Image
+        document.getElementById("feature-img").style.backgroundImage = "url('" + data.url + "')";
+
+        //Artiste
+        if (data.artiste) {
+            $(".artist-name").html(data.artiste);
+        }
+        else {
+            $(".artist-name").html('Non renseigné(s)');
+        }
+
+        //Type de l'oeuvre
+        $(".type").html(data.typeOeuvre);
+
+        //Adresse
+        if (data.rue && data.ville) {
+            $(".adresse-rue").html(data.rue);
+            $(".adresse-ville").html(data.ville);
+        }
+        else {
+            var geocodeService = L.esri.Geocoding.geocodeService();
+            geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
+                if (!error && result) {
+                    $(".adresse-ville").html(result.address.City);
+                    $(".adresse-rue").html(result.address.Address);
+                }
+            });
+
+        }
+
+        //Accès à la route pour s'y rendre
+        $(".button-navigate").attr('href', "https://www.google.com/maps/dir/?api=1&destination=" + e.latlng.lat + "," + e.latlng.lng + "&travelmode=walking&dir_action=navigate");
+
+        if (e && _markerPosition) {
+            $(".span-navigate").html(calcDistance(e) + " km");
+        }
+        else {
+            $(".span-navigate").html("Y aller");
+        }
+
+        //Pseudo de la personne ayant publié
+        if (data.utlisisateurPseudo) {
+            $(".publisher-name").html(data.utlisisateurPseudo);
+        }
+        else {
+            $(".publisher-name").html('Inconnu');
+        }
+
+        //Date de publication
+        var date = data.date;
+        if (date) {
+            $(".date-creation").html('le ' + date);
+        }
+
+        //Informations complémentaires
+        if (data.informations) {
+            $(".information").html(data.informations);
+            $(".information-complementaire").css('visibility', 'visible');
+        }
+        else {
+            $(".information").html('Aucune information à ce jour');
+            $(".information-complementaire").css('visibility', 'hidden');
+        }
+
+        //Modification des infos de l'oeuvre
+        $("#modifier").click(function () {
+            clearSideBar();
+            showSideBarForm(feature, e);
+        });
+
+        $("#approuver").click(function () {
+            $("#msgConfirmation").css('display', 'inline-block');
+            $("#msgConfirmation").html('Etes vous sûr de vouloir approuver ?');
+
+            $("#valider").css('display', 'inline-block');
+            $("#annuler").css('display', 'inline-block');
+            $("#lblOui").html('Approuver');
+            $("#lblNon").html('Rejeter');
+
+            $("#approuver").css('display', 'none');
+
+            
+        });
+
+        $("#delete").click(function () {
+            console.log('delete clik', _sidebarFeature);
+            waitDelete = true;
+
+            $("#msgConfirmation").css('display', 'inline-block');
+            $("#msgConfirmation").html('Etes vous sûr de vouloir la supprimer ?');
+
+            $("#valider").css('display', 'inline-block');
+            $("#annuler").css('display', 'inline-block');
+            $("#lblOui").html('Retirer');
+            $("#lblNon").html('Conserver');
+
+            
+            if (_sidebarFeature.properties.status == 1) {
+                $("#approuver").css('display', 'none');
+            }
+            else {
+                
+                $("#modifier").css('display', 'none');
+            }
+        });
+
+        $("#reintegrer").click(function () {
+            console.log('reintegrer clik', _sidebarFeature);
+            waitUnDelete = true;
+
+            $("#msgConfirmation").css('display', 'inline-block');
+            $("#msgConfirmation").html('Etes vous sûr de vouloir la réintégrer ?');
+
+            $("#valider").css('display', 'inline-block');
+            $("#annuler").css('display', 'inline-block');
+            $("#lblOui").html('Afficher');
+            $("#lblNon").html('Annuler');
+
+
+            $("#reintegrer").css('display', 'none');
+        });
+
+        $("#valider").click(function () {
+            $("#msgConfirmation").html('Traitement en cours ...');
+            $("#valider").css('display', 'none');
+            $("#annuler").css('display', 'none');
+            $("#busy-save").css('display', 'inline-block');
+
+            if (waitDelete) {    
+                deleteOeuvre(data.id);
+            }
+            else if (waitUnDelete) {
+                unDeleteOeuvre(data.id)
+            }
+            else {
+                approveOeuvre(data.id, true);
+            }
+        });
+
+        $("#annuler").click(function () {
+            console.log('cancel delete ', waitDelete);
+            if (waitDelete || waitUnDelete) {
+                $("#valider").css('display', 'none');
+                $("#annuler").css('display', 'none');
+                $("#msgConfirmation").css('display', 'none');
+
+                if (data.status == 1) {
+                    $("#approuver").css('display', 'inline-block');
+                }
+                else if (data.status == 2) {
+                    $("#reintegrer").css('display', 'inline-block');
+                }
+                else {
+                    $("#modifier").css('display', 'inline-block');
+                }
+            }
+            else {
+                $("#msgConfirmation").html('Traitement en cours ...');
+                approveOeuvre(data.id, false);
+            }
+        });
+    }
+
+    function approveOeuvre(oeuvreId, approved) {
+
+        event.preventDefault();
+
+        $("#valider").prop("disabled", true);
+        $("#annuler").prop("disabled", true);
+
+        var sendInfo = {
+            OeuvreId: oeuvreId,
+            Approved: approved,
+        };
+
+        $.ajax({
+            type: "POST",
+            //url: "http://localhost:7071/api/ApproveOeuvreFunction",
+            url: "https://import-kmz.azurewebsites.net/api/ApproveOeuvreFunction?code=umJaKjMW3glSJa0s1cyfgwp9tgdL104mocXQRm7qp833KOxrCK2XeQ==",
+            data: JSON.stringify(sendInfo),
+            dataType : "json",
+            processData: false,
+            contentType: 'application/json',
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+
+                console.log("SUCCESS APPROVED : ", data);
+
+                searchByLayer();
+
+                if (sendInfo.Approved) {
+                    _sidebarFeature.properties = data;
+                    _sidebarFeature.properties.url = correctImageUrl(data.imageUrl);
+
+                    $("#status").css('display', 'none');
+                    $("#modifier").css('display', 'inline-block');
+                    $("#approuver").css('display', 'none');
+                    $("#valider").css('display', 'none');
+                    $("#annuler").css('display', 'none');
+                    $("#busy-save").css('display', 'none');
+                    $("#msgConfirmation").css('display', 'none');
+                }
+                else {
+                    handleBack();
+                }
+            },
+            error: function (e) {
+
+                console.log("ERROR : ", e);
+
+                $("#valider").prop("disabled", false);
+                $("#annuler").prop("disabled", false);
+                $("#busy-save").css('display', 'none');
+                $("#msgConfirmation").css('display', 'none');
+            }
+        });
+    }
+
+    function deleteOeuvre(oeuvreId) {
+
+        event.preventDefault();
+
+        $("#valider").prop("disabled", true);
+        $("#annuler").prop("disabled", true);
+
+        $.ajax({
+            type: "DELETE",
+            //url: "http://localhost:7071/api/DeleteOeuvreFunction?oeuvreId=" + oeuvreId,
+            url: "https://import-kmz.azurewebsites.net/api/DeleteOeuvreFunction?code=orJGQa645FXhG54URf8INe0UNvI7Gaymf8ZMeWE743Ccxcf23u/Fhg==&oeuvreId=" + oeuvreId, 
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+
+                console.log("SUCCESS DELETED : ", data);
+
+                searchByLayer();
+                handleBack();
+            },
+            error: function (e) {
+
+                console.log("ERROR : ", e);
+
+                $("#valider").prop("disabled", false);
+                $("#annuler").prop("disabled", false);
+            }
+        });
+    }
+
+    function unDeleteOeuvre(oeuvreId) {
+
+        event.preventDefault();
+
+        $("#valider").prop("disabled", true);
+        $("#annuler").prop("disabled", true);
+
+        var sendInfo = {
+            OeuvreId: oeuvreId,
+            Admin: _userEmail
+        };
+
+        $.ajax({
+            type: "POST",
+            //url: "http://localhost:7071/api/UnDeleteOeuvreFunction",
+            url: "https://import-kmz.azurewebsites.net/api/UnDeleteOeuvreFunction?code=rRKjjJXfAsaX4MIbQlMcjAzMRB7aWqWu0MsqT28Zxbz7p4JEvk9Xbw==",
+            data: JSON.stringify(sendInfo),
+            dataType: "json",
+            processData: false,
+            contentType: 'application/json',
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+
+                searchByLayer();
+                handleBack();
+            },
+            error: function (e) {
+
+                console.log("ERROR : ", e);
+
+                $("#valider").prop("disabled", false);
+                $("#annuler").prop("disabled", false);
+                $("#busy-save").css('display', 'none');
+                $("#msgConfirmation").css('display', 'none');
+            }
+        });
+    }
+
+    function refuseOeuvre() {
+        handleBack();
+    }
+
+    function removeOeuvre() {
+        handleBack();
+    }
+</script>
